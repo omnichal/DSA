@@ -1,0 +1,3 @@
+C:/Users/omnic/Downloads/DSAL-CPP-main/DSAL-CPP-main/Assignment10/cmake-build-debug/CMakeFiles/Assignment10.dir
+C:/Users/omnic/Downloads/DSAL-CPP-main/DSAL-CPP-main/Assignment10/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/omnic/Downloads/DSAL-CPP-main/DSAL-CPP-main/Assignment10/cmake-build-debug/CMakeFiles/rebuild_cache.dir

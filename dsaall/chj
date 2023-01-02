@@ -1,0 +1,63 @@
+#include <iostream>
+using namespace std;
+
+void heapify(int heap[], int heapSize, int nodeIndex) {
+
+    int leftChildIndex = nodeIndex * 2 + 1;
+    int rightChildIndex = nodeIndex * 2 + 2;
+    int largestIndex = nodeIndex;
+
+    if (leftChildIndex < heapSize &&
+    heap[leftChildIndex] > heap[largestIndex]) {
+        largestIndex = leftChildIndex;
+    }
+
+    if (rightChildIndex < heapSize &&
+    heap[rightChildIndex] > heap[largestIndex]) {
+        largestIndex = rightChildIndex;
+    }
+
+    if (largestIndex != nodeIndex) {
+        swap(heap[largestIndex], heap[nodeIndex]);
+        heapify(heap, heapSize, largestIndex);
+    }
+}
+
+
+void heapSort(int heap[], int heapSize) {
+
+    int lastNonLeafNodeIndex = heapSize / 2 - 1;
+
+    for (int nodeIndex = lastNonLeafNodeIndex; nodeIndex >= 0; nodeIndex--) {
+        heapify(heap, heapSize, nodeIndex);
+    }
+
+    while (heapSize > 1) {
+        swap(heap[0], heap[--heapSize]);
+        heapify(heap, heapSize, 0);
+    }
+}
+
+int main() {
+
+    int nums[30];
+    int size;
+
+    cout << "Enter size of the array: ";
+    cin >> size;
+
+    for (int i = 0; i < size; i++) {
+        cout << "Enter " << i << " Element: ";
+        cin >> nums[i];
+    }
+
+    heapSort(nums, size);
+
+    cout << "Sorted Array:";
+    for (int i = 0; i < size; i++) {
+        cout << nums[i] << "\t";
+    }
+
+    cout << "\n";
+    return 0;
+}
